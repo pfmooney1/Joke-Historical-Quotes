@@ -1,0 +1,140 @@
+a {
+    color: lightgray;
+} 
+body {
+    background-color: black;
+    background-image: url(images/backgroundpattern.png);
+    background-repeat: repeat;
+    box-sizing: border-box;
+    color: white;
+    display: grid;
+    font-family: 'Forum', cursive;
+    font-size: 20px;
+    font-weight: 600;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    justify-items: center;
+    margin: 0em;
+    padding: 0em;
+    text-align: center;
+}
+button {
+    box-sizing: border-box;
+    color: black;
+    font-weight: 700;
+    font-size: 1em;
+    height: 1.35em;
+    margin: 0 0 0.2em 0;
+    width: 50%;
+}
+footer {
+    grid-area: footer;
+}
+header {
+    font-size: .65em;
+    font-weight: 900;
+    grid-area: header;
+    margin: 0em;
+    padding: 0em;
+}
+#buttonGroup{
+    display: grid;
+    font-size: 1em;
+    grid-area: buttonGroup;
+    height: 100%;
+    justify-items: center;
+}
+#imageAndQuoteContainer {
+    align-content: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-area: imageQuoteContainer;
+    grid-area: 1 / 1 / 6 / 2 | image;
+    grid-area: 5 / 1 / 6 / 2 | quote;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    height: 500px;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 0em;
+    width: 400px;
+}
+#imageForQuote {
+    background-position: 50% 0;
+    border: 4px outset black;
+    border-radius: 1px;
+    box-sizing: inherit;
+    grid-area: image;
+    height: inherit;
+    width: inherit;
+    z-index: 1;
+}
+#mainArea {
+    box-sizing: content-box;
+    display: grid;
+    grid-area: main;
+    grid-template-areas: 
+        "imageQuoteContainer"
+        "imageQuoteContainer"
+        "imageQuoteContainer"
+        "imageQuoteContainer"
+        "imageQuoteContainer"
+        "buttonGroup";
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr;
+    margin: 0em;
+    padding: 0em;
+}
+#quoteContainer {
+    align-self: center;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    font-size: 2em; /* This is edited in JS during the newQuote function */
+    font-weight: 600;
+    grid-area: quoteStart;
+    height: auto;
+    margin: 0;
+    padding: .6em .2em .6em .2em;
+    z-index: 2;
+}
+
+/*  Media Queries */
+/*  Tiny screens */
+@media (max-width: 400px){
+    body {
+        font-size: 18px;
+    }
+    #imageAndQuoteContainer {
+        height: 125vw;
+        width: 100vw;
+    }
+}
+
+/* +800 pixel and portrait  */
+@media only screen and (min-width: 800px) and (orientation: portrait) {
+    body {
+        font-size: 30px;
+    }
+    #imageAndQuoteContainer {
+        height: 750px;
+        width: 600px;
+    }
+}
+
+/* +1200 pixel and portrait  */
+@media only screen and (min-width: 1200px) and (orientation: portrait) {
+    body {
+        font-size: 50px;
+    }
+    header{
+        font-size: .8em;
+    }
+    #imageAndQuoteContainer {
+        height: 1000px;
+        width: 800px;
+    }
+}

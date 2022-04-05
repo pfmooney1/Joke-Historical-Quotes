@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Historical Quote Generator</title>
+        <link rel="stylesheet" href="JokeQuote.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Wrong Historical Quote Generator</h1>
+        </header>
+        <main id="mainArea">
+            <div id="imageAndQuoteContainer" onClick="newQuote()">
+                <img src="images/book.jpg" id="imageForQuote" onClick="newQuote()" width="400px" height="500px" alt="Click for a new quote.">
+                <div id="quoteContainer">
+                    <q id="placeForQuote">Click to Start</q>
+                    <br>
+                    <cite id="placeForSpeaker"></cite>
+                </div>
+            </div>
+            <div id="buttonGroup">
+                <button id="newQuoteButton" onClick="newQuote()">New Quote</button>
+                <button id="waitGoBackButton" onClick="waitGoBack()">Go back</button>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            <p>Copyright 2021 Patrick Mooney <br>
+                <a rel="noreferrer" href="https://patrickmooney.tech" target="_blank">Patrick Mooney's website</a><br>
+                Images from <a rel="noreferrer" href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank">Wikimedia Commons</a><br>
+            "Forum" font by <a rel="noreferrer" href="https://fonts.google.com/specimen/Forum?preview.text=Wrong%20Historical%20Quotes%20Generator&preview.text_type=custom&category=Display#about" target="_blank">David Masharov</a>
+            </p>
+            <hr>
+        </footer>
+        <script src="JokeQuote.js"></script>
+        <noscript>The site requires Javascript enabled to view the content.</noscript>
+
+    </body>
+</html>
