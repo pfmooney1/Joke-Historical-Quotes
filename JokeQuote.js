@@ -1,5 +1,8 @@
+const waitGoBackButton = document.getElementById("waitGoBackButton");
+const quoteContainer = document.getElementById('quoteContainer');
+
 // Disables "Go back" button at start
-document.getElementById("waitGoBackButton").style.display = "none";
+waitGoBackButton.style.display = "none";
 
 // Arrays
 var quoteTemplates = [
@@ -133,7 +136,6 @@ var quoteToAddToLastFiveQuotes;
 // Site's functions
 function shuffle(array) {
   var currentIndex = array.length,  randomIndex;
-
   while (0 !== currentIndex) {
 
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -142,21 +144,22 @@ function shuffle(array) {
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
-
   return array;
 }
+
 function handleWaitGoBackDisplay() {
     if (lastFiveQuotes.length < 1) {
-        document.getElementById("waitGoBackButton").style.display = "none";
+        waitGoBackButton.style.display = "none";
     } 
     else {
-        document.getElementById("waitGoBackButton").style.display = "inline-block";
+        waitGoBackButton.style.display = "inline-block";
     }
 }
+
 function newQuote() {
     // Moves quote space from middle to bottom
-    document.getElementById('quoteContainer').style.alignSelf = "end";
-    document.getElementById('quoteContainer').style.fontSize = "1.2em";
+    quoteContainer.style.alignSelf = "end";
+    quoteContainer.style.fontSize = "1.2em";
 
     
     // handles adding to and maintaining the lastFiveQuotes array.
@@ -198,6 +201,7 @@ function newQuote() {
         previousImageToDisplay: imageToDisplay
     };
 }
+
 function waitGoBack(){
     handleWaitGoBackDisplay();
     let x = lastFiveQuotes.shift();
